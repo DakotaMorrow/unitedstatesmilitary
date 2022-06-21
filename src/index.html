@@ -1,31 +1,128 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plain Website</title>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet">
+
     <style>
-        .center {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 100vh;
-            align-items: center;
-            justify-items: center;
-            font-size: 60px;
-            color: white;
-            background-color: #ff5252;
+        @media only screen and (max-width: 600px) {
+            .containerIndex {
+                background-image: url("img/memorial_day_mobile.jpg");
+            }
         }
         
-        body {
-            margin: 0;
-            padding: 0;
+        @media only screen and (min-width: 601px) {
+            .containerIndex {
+                background-image: url("img/memorial_day_desktop.jpg");
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="center">Hello</div>
+    <div class="containerIndex">
+        <div class="darken">
+
+            <div class="menu">
+                <div class="menuItem"><a href="about.html">About</a></div>
+                <div class="menuItem"><a href="#bootcamp">Boot Camp</a></div>
+                <div class="menuItem"><a href="#graduation">Graduation</a></div>
+
+            </div>
+
+            <div id="message" class="message"> United States Military
+            </div>
+
+            <div class="content">
+
+                <div style="height: 50px;background-color: #ffffff;">
+                </div>
+
+                <div id="bootcamp" class="infoRow">
+
+                    <div class="imageDesktop">
+                        <img width="100%" src="img/Bootcamp.jpg" alt="bootcamp">
+                    </div>
+                    <div class="imageMobile">
+                        <img width="100%" src="img/Bootcamp.jpg" alt="bootcamp">
+                    </div>
+
+                    <div class="section">
+                        <div class="sectiontitle">Boot Camp</div>
+                        <div class="sectionbody">Boot Camp Basic Training — often called boot camp — prepares recruits for all elements of service: physical, mental and emotional. It gives service members the basic tools necessary to perform the roles that will be assigned to
+                            them for the duration of their tour. Each of the Services has its own training program, tailoring the curriculum to the specialized nature of its role in the Military.</div>
+                    </div>
+                </div>
+
+                <div id="graduation" class="infoRow">
+
+                    <div class="imageMobile">
+                        <img width="100%" src="img/Marine_Graduation.jpg" alt="deployment">
+                    </div>
+
+                    <div class="section">
+                        <div class="sectiontitle">Military Graduation</div>
+                        <div class="sectionbody">While attending basic training the recruit will learn basic military customs and training which equips them to serve their country in the United States Military. At the successful completion of their training each recruit will
+                            participate in a formal graduation exercise.</div>
+                    </div>
+
+                    <div class="imageDesktop">
+                        <img width="100%" src="img/Marine_Graduation.jpg" alt="deployment">
+                    </div>
+
+                </div>
+
+
+
+                <div class="infoRow">
+
+                    <div class="imageDesktop">
+                        <img width="100%" src="img/deployment.jpg" alt="deployment">
+                    </div>
+                    <div class="imageMobile">
+                        <img width="100%" src="img/deployment.jpg" alt="deployment">
+                    </div>
+
+                    <div class="section">
+                        <div class="sectiontitle">Deployment</div>
+                        <div class="sectionbody">Military deployment is the movement of armed forces. Deployment includes any movement from a military personnel's home station to somewhere else outside the continental U.S. and its territories.</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <script>
+                window.onload = function() {
+                    demo();
+
+                }
+
+                function clickme() {
+                    alert("This is Dakota")
+                }
+                async function demo() {
+                    for (let i = 0; i < 2; i++) {
+                        console.log(`Waiting ${i} seconds...`);
+                        await sleep(i * 1000);
+                    }
+                    var message = document.getElementById("message");
+                    message.innerHTML = "The Bold, The Brave";
+
+                    console.log('Done');
+                }
+
+                function sleep(ms) {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                }
+            </script>
+
 </body>
 
 </html>
